@@ -1,0 +1,16 @@
+schemaVersion: 2.1.0
+metadata:
+  name: big
+components:
+  - name: tooling-container
+    container:
+      image: quay.io/mloriedo/universal-developer-image:kubedock
+      memoryRequest: 2Gi
+      memoryLimit: 16Gi
+      cpuRequest: 1000m
+      cpuLimit: 4000m
+commands:
+  - id: command-using-env
+    exec:
+      component: tooling-container
+      commandLine: echo "Hello $USER"
