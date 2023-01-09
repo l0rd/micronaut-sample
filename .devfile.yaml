@@ -1,4 +1,4 @@
-schemaVersion: 2.1.0
+schemaVersion: 2.2.0
 metadata:
   name: big
 components:
@@ -10,7 +10,11 @@ components:
       cpuRequest: 1000m
       cpuLimit: 4000m
 commands:
-  - id: command-using-env
+  - id: run
     exec:
       component: tooling-container
-      commandLine: echo "Hello $USER"
+      commandLine: ./gradlew run
+  - id: docke-run
+    exec:
+      component: tooling-container
+      commandLine: docker run --name httpd -d -p 8080 docker.io/library/python python -m http.server 8080 && echo "test connection using localhost $(docker port httpd 8080)"
