@@ -14,7 +14,11 @@ commands:
     exec:
       component: tooling-container
       commandLine: ./gradlew run
-  - id: docke-run
+  - id: start-kubedock
+    exec:
+      component: tooling-container
+      commandLine: kubedock server --port-forward --inspector   
+  - id: docker-run
     exec:
       component: tooling-container
       commandLine: docker run --name httpd -d -p 8080 docker.io/library/python python -m http.server 8080 && echo "test connection using localhost $(docker port httpd 8080)"
