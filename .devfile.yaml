@@ -24,4 +24,4 @@ commands:
   - id: docker-run
     exec:
       component: tooling-container
-      commandLine: docker run --name httpd -d -p 8080 docker.io/library/python python -m http.server 8080 && echo "test connection using localhost $(docker port httpd 8080)"
+      commandLine: docker run --name httpd -d -p 8080:8080 docker.io/library/python python -m http.server 8080
