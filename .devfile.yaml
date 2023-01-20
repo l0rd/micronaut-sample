@@ -9,7 +9,7 @@ components:
           value: 'tcp://127.0.0.1:2475'
       image: quay.io/mloriedo/universal-developer-image:kubedock
       memoryRequest: 2Gi
-      memoryLimit: 16Gi
+      memoryLimit: 13Gi
       cpuRequest: 1000m
       cpuLimit: 4000m
 commands:
