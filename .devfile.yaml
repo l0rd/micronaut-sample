@@ -1,6 +1,6 @@
 schemaVersion: 2.2.0
 metadata:
-  name: big
+  name: testcontainers-sample
 components:
   - name: tooling-container
     container:
