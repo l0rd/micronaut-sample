@@ -20,7 +20,7 @@ commands:
   - id: start-kubedock
     exec:
       component: tooling-container
-      commandLine: kubedock server --port-forward --inspector   
+      commandLine: kubedock server --port-forward   
   - id: docker-run
     exec:
       component: tooling-container
