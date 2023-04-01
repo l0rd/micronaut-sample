@@ -7,6 +7,8 @@ components:
       env:
         - name: DOCKER_HOST
           value: 'tcp://127.0.0.1:2475'
+        - name: CONTAINER_HOST
+          value: 'tcp://127.0.0.1:2475'
       image: quay.io/mloriedo/universal-developer-image:kubedock
       memoryRequest: 2Gi
       memoryLimit: 11Gi
@@ -20,8 +22,12 @@ commands:
   - id: start-kubedock
     exec:
       component: tooling-container
-      commandLine: kubedock server --port-forward   
+      commandLine: kubedock server --port-forward
   - id: docker-run
     exec:
       component: tooling-container
       commandLine: docker run --name httpd -d -p 8080:8080 python python -m http.server 8080
+  - id: podman-run
+    exec:
+      component: tooling-container
+      commandLine: podman --remote --url "tcp://127.0.0.1:2475" run --name httpd -d -p 8080:8080 python python -m http.server 8080
