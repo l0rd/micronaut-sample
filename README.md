@@ -1,3 +1,18 @@
+## Run Tests using testcontainers
+
+- Start the workspace ([click here to open on OpenShift Developer Sandbox](https://workspaces.openshift.com/f?url=https://github.com/l0rd/micronaut-sample))
+- Open 2 terminals and run the following commands (or use the corresponding VS Code tasks):
+
+    In the first terminal:
+    ```
+    $ kubedock server --port-forward
+    ```
+
+    In the second terminal:
+    ```
+    $ ./gradlew test
+    ```
+
 ## Micronaut 3.9.0 Documentation
 
 - [User Guide](https://docs.micronaut.io/3.9.0/guide/index.html)
