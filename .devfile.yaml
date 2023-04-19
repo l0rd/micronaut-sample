@@ -15,7 +15,7 @@ components:
           value: 'true'
       image: quay.io/mloriedo/universal-developer-image:kubedock
       memoryRequest: 2Gi
-      memoryLimit: 11Gi
+      memoryLimit: 8Gi
       cpuRequest: 1000m
       cpuLimit: 4000m
       endpoints:
