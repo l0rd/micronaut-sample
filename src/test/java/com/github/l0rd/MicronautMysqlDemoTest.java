@@ -1,4 +1,4 @@
-package com.example;
+package com.github.l0rd;
 
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import jakarta.inject.Inject;
 
 @MicronautTest
-class MicronautSampleTest {
+class MicronautMysqlDemoTest {
 
     @Inject
     EmbeddedApplication<?> application;
