@@ -26,9 +26,9 @@ jobs:
           username: ${{ secrets.QUAY_USERNAME }}
           password: ${{ secrets.QUAY_PASSWORD }}
       -
-        name: Build and push alpine
+        name: Build and push image
         uses: docker/build-push-action@v4
         with:
-          context: alpine
+          context: .
           push: true
           tags: quay.io/mloriedo/universal-developer-image:kubedock
