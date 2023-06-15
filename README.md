@@ -1,17 +1,24 @@
+[![Open on Developer Sandbox](https://img.shields.io/static/v1?label=OpenShift%20Dev%20Spaces&message=Developer%20Sandbox&logo=eclipseche&color=FDB940&labelColor=525C86)](https://workspaces.openshift.com/f?url=https://github.com/l0rd/micronaut-sample) </br>
+
+## Execute `podman run` from the workspace
+
+[Kubedock](https://github.com/joyrex2001/kubedock/) is executed at workspace startup and podman is configured to use it as the backend. Once the workspace is started type:
+
+```
+$ podman run --name httpd -d -p 8080:8080 python python -m http.server 8080
+```
+
+https://github.com/l0rd/micronaut-sample/assets/606959/ca6c73aa-c736-47f5-b67f-2e4cef05b10d
+
+
 ## Run Tests using testcontainers
 
-- Start the workspace ([click here to open on OpenShift Developer Sandbox](https://workspaces.openshift.com/f?url=https://github.com/l0rd/micronaut-sample))
-- Open 2 terminals and run the following commands (or use the corresponding VS Code tasks):
+A couple of Visual Studio Code tasks are pre-configured (using the `.devfile.yaml`) to run the tests and the application. 
 
-    In the first terminal:
-    ```
-    $ kubedock server --port-forward
-    ```
+<img width="1082" alt="image" src="https://github.com/l0rd/micronaut-sample/assets/606959/5b0cc56b-6a15-47fd-b84f-d567538c8d72">
 
-    In the second terminal:
-    ```
-    $ ./gradlew test
-    ```
+Testcontainers uses kubedock to start a MySQL database. But tests are currently failing on Developer Sandbox. That's probably because the MySQL container expects to be run as root.
+
 
 ## Micronaut 3.9.0 Documentation
 
