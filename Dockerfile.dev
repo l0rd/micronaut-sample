@@ -24,4 +24,4 @@ USER 10001
 
 RUN source $HOME/.sdkman/bin/sdkman-init.sh && sdk default java 17.0.3-tem
 
-CMD kubedock server --port-forward
+CMD while [ ! -f /home/user/.kube/config ]; do sleep 1; done; kubedock server --port-forward
