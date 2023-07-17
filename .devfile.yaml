@@ -5,8 +5,6 @@ components:
   - name: tooling-container
     container:
       env:
-        - name: DOCKER_HOST
-          value: 'tcp://127.0.0.1:2475'
         - name: CONTAINER_HOST
           value: 'tcp://127.0.0.1:2475'
         - name: TESTCONTAINERS_RYUK_DISABLED

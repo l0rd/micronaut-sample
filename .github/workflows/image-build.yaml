@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - 'main'
+      - 'devfile-and-dockerfile'
 
 jobs:
   docker:
@@ -30,6 +30,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          file: Dockerfile.dev
+          file: .devfile.Dockerfile
           push: true
           tags: quay.io/mloriedo/universal-developer-image:kubedock
