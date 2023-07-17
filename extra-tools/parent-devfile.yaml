@@ -59,4 +59,4 @@ events:
   preStart:
     - extra-tools-copy-command
   postStart:
-    - init-che-code-command
+    - extra-tools-start-command
