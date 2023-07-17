@@ -11,7 +11,7 @@ components:
       cpuLimit: 4000m
   - name: extra-tools-copy
     container:
-      image: quay.io/mloriedo/universal-developer-image:kubedock-poststart
+      image: quay.io/mloriedo/extra-tools-sample:latest
       command:
         - /copy-extra-tools.sh
       volumeMounts:
