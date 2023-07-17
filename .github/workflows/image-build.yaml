@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - 'devfile-and-dockerfile'
+      - 'devfile-and-poststart'
 
 jobs:
   docker:
@@ -29,7 +29,7 @@ jobs:
         name: Build and push image
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: extra-tools
           file: .devfile.Dockerfile
           push: true
-          tags: quay.io/mloriedo/universal-developer-image:kubedock
+          tags: quay.io/mloriedo/universal-developer-image:kubedock-poststart

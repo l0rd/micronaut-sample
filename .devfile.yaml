@@ -1,19 +1,16 @@
 schemaVersion: 2.2.0
 metadata:
   name: testcontainers-sample
-components:
-  - name: tooling-container
-    container:
-      image: quay.io/mloriedo/universal-developer-image:kubedock
-      memoryRequest: 2Gi
-      memoryLimit: 8Gi
-      cpuRequest: 1000m
-      cpuLimit: 4000m
-      endpoints:
-        - exposure: none
-          name: kubedock
-          protocol: tcp
-          targetPort: 2475      
+parent:
+  uri: https://raw.githubusercontent.com/l0rd/micronaut-sample/devfile-and-poststart/extra-tools/parent-devfile.yaml
+  components:
+    - name: tooling-container
+      container: 
+        env:
+          - name: EXTRA_TOOLS_KUBEDOCK
+            value: 'true'
+          - name: EXTRA_TOOLS_JAVA_VERSION
+            value: '17.0.3-tem'
 commands:
   - id: test
     exec:
