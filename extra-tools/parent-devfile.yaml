@@ -45,7 +45,7 @@ commands:
   - id: extra-tools-start-command
     exec:
       component: tooling-container
-      commandLine: nohup /extra-tools/start.sh > /extra-tools/sart.log 2>&1 &
+      commandLine: nohup /extra-tools/start.sh > /extra-tools/start.log 2>&1 &
 events:
   preStart:
     - extra-tools-copy-command

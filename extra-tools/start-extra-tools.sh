@@ -2,8 +2,8 @@
 
 # Start kubedock
 if [ -n "$EXTRA_TOOLS_KUBEDOCK" ]; then
-
-while [ ! -f /home/user/.kube/config ]; do sleep 1; done; kubedock server --port-forward
+    while [ ! -f /home/user/.kube/config ]; do sleep 1; done; kubedock server --port-forward
+fi
 
 # Set Java version
 if [ -n "$EXTRA_TOOLS_JAVA_VERSION" ]; then
