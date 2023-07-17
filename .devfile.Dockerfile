@@ -17,8 +17,3 @@ USER 10001
 
 # Use sdk man to select a specific Java version
 RUN source $HOME/.sdkman/bin/sdkman-init.sh && sdk default java 17.0.3-tem
-
-
-# New tool
-
-RUN curl ...
