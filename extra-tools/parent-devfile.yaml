@@ -9,30 +9,9 @@ components:
       memoryLimit: 8Gi
       cpuRequest: 1000m
       cpuLimit: 4000m
-  - name: extra-tools-copy
-    container:
-      image: quay.io/mloriedo/extra-tools-sample:latest
-      command:
-        - /copy-extra-tools.sh
       volumeMounts:
         - name: extra-tools
           path: /extra-tools
-      memoryLimit: 256Mi
-      memoryRequest: 32Mi
-      cpuLimit: 500m
-      cpuRequest: 30m
-  - name: extra-tools-start
-    attributes:
-      controller.devfile.io/container-contribution: true
-    container:
-      image: ignored
-      volumeMounts:
-        - name: extra-tools
-          path: /extra-tools
-      memoryLimit: 1024Mi
-      memoryRequest: 256Mi
-      cpuLimit: 500m
-      cpuRequest: 30m
       env:
         - name: CONTAINER_HOST 
           value: tcp://127.0.0.1:2475
@@ -45,6 +24,18 @@ components:
           name: kubedock
           protocol: tcp
           targetPort: 2475
+  - name: extra-tools-copy
+    container:
+      image: quay.io/mloriedo/extra-tools-sample:latest
+      command:
+        - /copy-extra-tools.sh
+      volumeMounts:
+        - name: extra-tools
+          path: /extra-tools
+      memoryLimit: 256Mi
+      memoryRequest: 32Mi
+      cpuLimit: 500m
+      cpuRequest: 30m
   - name: extra-tools
     volume: {}
 commands:
@@ -53,7 +44,7 @@ commands:
       component: extra-tools-copy
   - id: extra-tools-start-command
     exec:
-      component: extra-tools-start
+      component: tooling-container
       commandLine: nohup /extra-tools/start.sh > /extra-tools/sart.log 2>&1 &
 events:
   preStart:

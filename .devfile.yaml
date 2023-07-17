@@ -26,4 +26,4 @@ commands:
     exec:
       label: '3. podman run sample'
       component: tooling-container
-      commandLine: podman --remote --url "tcp://127.0.0.1:2475" run --name httpd -d -p 8080:8080 python python -m http.server 8080
+      commandLine: podman run --name httpd -d -p 8080:8080 python python -m http.server 8080

@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/devfile/api/v2.2.0/schemas/latest/devfile.json": "file:///projects/micronaut-sample/extra-tools/parent-devfile.yaml"
+    }
+}
