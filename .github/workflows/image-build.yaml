@@ -30,6 +30,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: extra-tools
-          file: .devfile.Dockerfile
+          file: extra-tools.Dockerfile
           push: true
           tags: quay.io/mloriedo/universal-developer-image:kubedock-poststart
