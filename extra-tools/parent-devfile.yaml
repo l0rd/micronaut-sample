@@ -3,6 +3,8 @@ metadata:
   name: universal-parent
 components:
   - name: tooling-container
+    attributes:
+      controller.devfile.io/merge-contribution: true
     container:
       image: quay.io/devfile/universal-developer-image:latest
       memoryRequest: 2Gi
