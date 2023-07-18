@@ -36,7 +36,7 @@ components:
       cpuLimit: 500m
       cpuRequest: 30m
       env:
-        - name: CONTAINER_HOST 
+        - name: TESTCONTAINERS_HOST_OVERRIDE 
           value: tcp://127.0.0.1:2475
         - name: TESTCONTAINERS_RYUK_DISABLED 
           value: 'true'
